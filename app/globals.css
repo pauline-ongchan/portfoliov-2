@@ -49,6 +49,30 @@ body {
   @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 focus-visible:ring-offset-2 focus-visible:ring-offset-base;
 }
 
+.text-kicker {
+  @apply text-sm uppercase tracking-wider text-muted;
+}
+
+.text-section-heading {
+  @apply text-3xl font-semibold text-foreground;
+}
+
+.text-subtitle {
+  @apply text-sm leading-6 text-muted;
+}
+
+.text-body {
+  @apply text-base leading-7 text-foreground/90;
+}
+
+.text-body-muted {
+  @apply text-base leading-7 text-muted;
+}
+
+.text-meta {
+  @apply text-sm leading-6 text-white/60;
+}
+
 .cursor-glow {
   position: fixed;
   left: 0;

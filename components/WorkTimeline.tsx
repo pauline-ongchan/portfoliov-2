@@ -33,13 +33,13 @@ export default function WorkTimeline() {
                 <h3 className="min-w-0 text-base font-semibold text-foreground">
                   {entry.role} · {entry.company}
                 </h3>
-                <div className="shrink-0 text-sm text-white/60">{entry.dates}</div>
+                <div className="shrink-0 text-meta">{entry.dates}</div>
               </div>
               {entry.location ? (
-                <p className="mt-2 text-sm text-white/50">{entry.location}</p>
+                <p className="mt-2 text-subtitle">{entry.location}</p>
               ) : null}
-              <p className="mt-3 text-sm leading-6 text-white/80">{entry.summary}</p>
-              <ul className="mt-3 space-y-2 text-sm leading-6 text-white/70">
+              <p className="mt-3 text-body">{entry.summary}</p>
+              <ul className="mt-3 space-y-2 text-body">
                 {entry.bullets.slice(0, 2).map((bullet) => (
                   <li key={bullet}>- {bullet}</li>
                 ))}

@@ -14,6 +14,7 @@ export type Project = {
   context: string;
   approach: string;
   learned: string;
+  images?: string[];
   tech: string[];
   links: ProjectLinkSet;
 };
@@ -30,6 +31,9 @@ export const projects: Project[] = [
       'TODO: How did you break down the work? Research, prototyping, and builds.',
     learned:
       'TODO: What did you learn? Product lessons, technical wins, or tradeoffs.',
+    images: [
+      '/projects/northstar-1.jpg'
+    ],
     tech: ['Next.js', 'TypeScript', 'Tailwind', 'Supabase'],
     links: {
       github: 'https://github.com/pauline/northstar',
@@ -48,6 +52,7 @@ export const projects: Project[] = [
       'TODO: How did you break down the work? Research, prototyping, and builds.',
     learned:
       'TODO: What did you learn? Product lessons, technical wins, or tradeoffs.',
+    images: [],
     tech: ['React', 'Node.js', 'PostgreSQL', 'Mapbox'],
     links: {
       github: 'https://github.com/pauline/signal-city',
@@ -66,6 +71,7 @@ export const projects: Project[] = [
       'TODO: How did you break down the work? Research, prototyping, and builds.',
     learned:
       'TODO: What did you learn? Product lessons, technical wins, or tradeoffs.',
+    images: [],
     tech: ['Next.js', 'Prisma', 'Tailwind', 'Stripe'],
     links: {
       github: 'https://github.com/pauline/studio-scheduler'

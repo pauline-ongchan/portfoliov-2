@@ -41,7 +41,7 @@ export default function Build() {
         {selectedProject ? (
           <BuildProjectChapter project={selectedProject} />
         ) : (
-          <div className="text-sm text-muted">No project selected.</div>
+          <div className="text-subtitle">No project selected.</div>
         )}
       </div>
     </div>

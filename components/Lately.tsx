@@ -28,11 +28,11 @@ export default function Lately() {
                 </div>
               )}
             </div>
-            <div className="mt-4 text-xs uppercase tracking-wider text-muted">
+            <div className="mt-4 text-meta">
               {item.date}
             </div>
             <h3 className="mt-2 text-lg font-semibold text-foreground">{item.title}</h3>
-            <p className="mt-2 text-sm leading-6 text-muted">{item.caption}</p>
+            <p className="mt-2 text-subtitle">{item.caption}</p>
           </article>
         ))}
       </div>

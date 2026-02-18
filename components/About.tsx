@@ -4,9 +4,9 @@ import { site } from '@/data/site';
 
 export default function About() {
   return (
-    <div className="max-w-prose space-y-4 text-base leading-7 text-foreground/90">
+    <div className="max-w-prose space-y-4 text-body">
       <p>{site.about.primary}</p>
-      <p className="text-sm leading-6 text-muted">{site.about.secondary}</p>
+      <p className="text-subtitle">{site.about.secondary}</p>
     </div>
   );
 }

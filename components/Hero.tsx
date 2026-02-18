@@ -49,7 +49,7 @@ export default function Hero() {
             </span>
           </button>
         </p>
-        <p className="max-w-2xl text-sm leading-6 text-muted">
+        <p className="max-w-2xl text-subtitle">
           {site.heroSubline}
         </p>
       </div>

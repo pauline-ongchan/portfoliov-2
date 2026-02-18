@@ -32,13 +32,13 @@ export default function Section({
         {(title || heading || subtitle) && (
           <div className="mb-10">
             {title && (
-              <div className="mb-4 text-sm uppercase tracking-wider text-muted">
+              <div className="mb-4 text-kicker">
                 {title}
               </div>
             )}
-            {heading && <h2 className="text-3xl font-semibold">{heading}</h2>}
+            {heading && <h2 className="text-section-heading">{heading}</h2>}
             {subtitle && (
-              <p className="mt-2 text-sm leading-6 text-muted">{subtitle}</p>
+              <p className="mt-2 text-subtitle">{subtitle}</p>
             )}
           </div>
         )}
