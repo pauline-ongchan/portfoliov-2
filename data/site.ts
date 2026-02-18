@@ -18,8 +18,9 @@ export const site = {
 };
 
 export const navLinks = [
+  { id: 'work', label: 'Work' },
   { id: 'build', label: 'Build' },
-  { id: 'leadership', label: 'Leadership' },
+  { id: 'community', label: 'Community' },
   { id: 'lately', label: 'Lately' },
   { id: 'about', label: 'About' }
 ];

@@ -1,6 +1,7 @@
 import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import Section from '@/components/Section';
+import WorkTimeline from '@/components/WorkTimeline';
 import Build from '@/components/Build';
 import Leadership from '@/components/Leadership';
 import Lately from '@/components/Lately';
@@ -14,18 +15,27 @@ export default function Home() {
         <Section id="top" minHeight="min-h-[90svh]" className="pt-24">
           <Hero />
         </Section>
-        <Section id="build" title="01 - Build" heading="Build" minHeight="min-h-[80svh]">
+        <Section
+          id="work"
+          title="01 - WORK"
+          heading="Work"
+          subtitle="Recent roles and projects that shaped how I build."
+          minHeight="min-h-[80svh]"
+        >
+          <WorkTimeline />
+        </Section>
+        <Section id="build" title="02 - Build" heading="Build" minHeight="min-h-[80svh]">
           <Build />
         </Section>
         <Section
-          id="leadership"
-          title="02 - Leadership"
-          heading="Leadership"
+          id="community"
+          title="03 - Community"
+          heading="Community"
           minHeight="min-h-[80svh]"
         >
           <Leadership />
         </Section>
-        <Section id="lately" title="03 - Lately" heading="Lately" minHeight="min-h-[80svh]">
+        <Section id="lately" title="04 - Lately" heading="Lately" minHeight="min-h-[80svh]">
           <Lately />
         </Section>
         <Section id="about" title="05 - About" heading="About" minHeight="min-h-screen">
