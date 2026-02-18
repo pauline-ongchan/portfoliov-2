@@ -1,0 +1,63 @@
+'use client';
+
+// CONTENT: This component renders the sticky navigation. Change copy in /data/site.ts
+// CONTENT: social links come from /data/site.ts
+
+import Link from 'next/link';
+import { navLinks, site } from '@/data/site';
+import { useScrollSpy } from '@/components/hooks/useScrollSpy';
+import SocialLinks from '@/components/SocialLinks';
+
+const sections = ['top', ...navLinks.map((link) => link.id)];
+
+export default function Nav() {
+  const activeId = useScrollSpy(sections);
+
+  const handleNavClick = (id: string) => {
+    const target = document.getElementById(id);
+    if (!target) return;
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.history.replaceState(null, '', `#${id}`);
+  };
+
+  return (
+    <nav className="fixed inset-x-0 top-0 z-50">
+      <div className="mx-auto flex h-[52px] items-center justify-between border-b border-white/10 bg-black/20 px-6 backdrop-blur md:h-[56px]">
+        <button
+          type="button"
+          className="text-sm font-semibold text-foreground focus-ring"
+          onClick={() => {
+            if (typeof window !== 'undefined') {
+              handleNavClick('top');
+            }
+          }}
+        >
+          {site.name}
+        </button>
+        <div className="flex items-center gap-4 text-sm text-muted md:gap-6">
+          {navLinks.map((link) => {
+            const isActive = activeId === link.id;
+            return (
+              <Link
+                key={link.id}
+                href={`#${link.id}`}
+                onClick={(event) => {
+                  event.preventDefault();
+                  handleNavClick(link.id);
+                }}
+                className={`relative border-b-2 transition-colors duration-200 hover:text-foreground focus-ring ${
+                  isActive
+                    ? 'border-accent text-foreground'
+                    : 'border-transparent text-muted'
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+          <SocialLinks />
+        </div>
+      </div>
+    </nav>
+  );
+}
