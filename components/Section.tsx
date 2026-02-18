@@ -10,6 +10,7 @@ type SectionProps = {
   children: ReactNode;
   minHeight?: string;
   className?: string;
+  scrollMtClass?: string;
 };
 
 export default function Section({
@@ -19,12 +20,13 @@ export default function Section({
   subtitle,
   children,
   minHeight = 'min-h-[80svh]',
-  className = ''
+  className = '',
+  scrollMtClass = 'scroll-mt-[96px]'
 }: SectionProps) {
   return (
     <section
       id={id}
-      className={`w-full py-16 sm:py-20 scroll-mt-24 md:scroll-mt-28 sm:snap-start ${minHeight} ${className}`}
+      className={`w-full py-16 sm:py-20 ${scrollMtClass} sm:snap-start ${minHeight} ${className}`}
     >
       <div className="mx-auto w-full max-w-[1100px] px-6 sm:px-8">
         {(title || heading || subtitle) && (

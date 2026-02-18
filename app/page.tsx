@@ -1,4 +1,3 @@
-import dynamic from 'next/dynamic';
 import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import Section from '@/components/Section';
@@ -6,9 +5,6 @@ import Build from '@/components/Build';
 import Leadership from '@/components/Leadership';
 import Lately from '@/components/Lately';
 import About from '@/components/About';
-import Footer from '@/components/Footer';
-
-const PlacesMap = dynamic(() => import('@/components/PlacesMap'), { ssr: false });
 
 export default function Home() {
   return (
@@ -32,19 +28,9 @@ export default function Home() {
         <Section id="lately" title="03 - Lately" heading="Lately" minHeight="min-h-[80svh]">
           <Lately />
         </Section>
-        <Section
-          id="places"
-          title="02 - Places"
-          heading="Passport"
-          subtitle="A few places that shaped me."
-          minHeight="min-h-[80svh]"
-        >
-          <PlacesMap />
-        </Section>
-        <Section id="about" title="05 - About" heading="About" minHeight="min-h-[80svh]">
+        <Section id="about" title="05 - About" heading="About" minHeight="min-h-screen">
           <About />
         </Section>
-        <Footer />
       </main>
     </div>
   );

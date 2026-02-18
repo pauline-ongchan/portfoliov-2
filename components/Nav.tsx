@@ -12,6 +12,7 @@ const sections = ['top', ...navLinks.map((link) => link.id)];
 
 export default function Nav() {
   const activeId = useScrollSpy(sections);
+  const showHighlight = activeId !== 'top';
 
   const handleNavClick = (id: string) => {
     const target = document.getElementById(id);
@@ -25,18 +26,21 @@ export default function Nav() {
       <div className="mx-auto flex h-[52px] items-center justify-between border-b border-white/10 bg-black/20 px-6 backdrop-blur md:h-[56px]">
         <button
           type="button"
-          className="text-sm font-semibold text-foreground focus-ring"
+          className="flex items-center gap-2 text-sm font-semibold text-foreground focus-ring"
           onClick={() => {
             if (typeof window !== 'undefined') {
               handleNavClick('top');
             }
           }}
         >
-          {site.name}
+          <span>{site.name}</span>
+          <span className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-xs text-white/50">
+            v1.0
+          </span>
         </button>
         <div className="flex items-center gap-4 text-sm text-muted md:gap-6">
           {navLinks.map((link) => {
-            const isActive = activeId === link.id;
+            const isActive = showHighlight && activeId === link.id;
             return (
               <Link
                 key={link.id}

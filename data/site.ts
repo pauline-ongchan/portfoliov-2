@@ -21,7 +21,6 @@ export const navLinks = [
   { id: 'build', label: 'Build' },
   { id: 'leadership', label: 'Leadership' },
   { id: 'lately', label: 'Lately' },
-  { id: 'places', label: 'Places' },
   { id: 'about', label: 'About' }
 ];
 
