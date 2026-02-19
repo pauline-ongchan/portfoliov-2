@@ -12,42 +12,38 @@ export type WorkEntry = {
 };
 
 export const work: WorkEntry[] = [
-  {
-    id: 'acme-security-intern',
-    company: 'Acme Systems',
-    role: 'Security Engineering Intern',
-    dates: 'May 2025 - Aug 2025',
+    {
+    id: 'rbc',
+    company: 'RBC',
+    role: 'Incoming Software Engineering Intern',
+    dates: 'Summer 2026',
     location: 'Vancouver, BC',
-    summary: 'Built internal tools to reduce investigation time and improve alert quality.',
+    summary: '',
     bullets: [
-      'Implemented triage automation that reduced duplicate alerts in weekly reviews.',
-      'Partnered with product and infra to document incident response runbooks.'
     ],
-    tags: ['Security', 'Automation']
+    tags: ['SWE']
   },
   {
-    id: 'ubc-product-assistant',
-    company: 'UBC Student Team',
-    role: 'Product Assistant',
-    dates: 'Sep 2024 - Apr 2025',
+    id: 'hsone',
+    company: 'Henry Schein One Canada',
+    role: 'Product Management Intern',
+    dates: 'May 2025 - December 2025',
     location: 'Vancouver, BC',
-    summary: 'Supported roadmap planning and shipped improvements to onboarding flows.',
+    summary: 'Worked on product discovery and early feature exploration for academic healthcare software.',
     bullets: [
-      'Ran user interviews and translated findings into scoped sprint tickets.',
-      'Worked with engineers on launch QA and post-release issue triage.'
+      
     ],
-    tags: ['PM', 'UX']
+    tags: ['PM']
   },
   {
-    id: 'freelance-builder',
-    company: 'Independent',
-    role: 'Freelance Builder',
-    dates: '2023 - 2024',
-    summary: 'Delivered small web products for student groups and early founders.',
+    id: 'zetl',
+    company: 'Zetl',
+    role: 'Product Growth and Marketing Intern',
+    dates: 'April 2024 - August 2024',
+    location: 'Singapore (remote)',
+    summary: 'Worked on partnership positioning, product decks, and early marketing initiatives.',
     bullets: [
-      'Built and deployed MVP dashboards with analytics and auth.',
-      'Set up maintainable component systems and handoff docs.'
     ],
-    tags: ['SWE', 'Product']
+    tags: ['Growth', 'Design']
   }
 ];

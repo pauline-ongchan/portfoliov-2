@@ -12,11 +12,11 @@ export default function Hero() {
   const prefersReducedMotion = usePrefersReducedMotion();
   const rotation = useRotatingText(hero.rotating, 1400, prefersReducedMotion);
 
-  const handleScrollToBuild = () => {
-    const target = document.getElementById('build');
+  const handleScrollToWork= () => {
+    const target = document.getElementById('work');
     if (!target) return;
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    window.history.replaceState(null, '', '#build');
+    window.history.replaceState(null, '', '#work');
   };
 
   const handleRotateNext = () => {
@@ -55,10 +55,10 @@ export default function Hero() {
       </div>
       <div className="flex flex-wrap gap-3">
         <a
-          href="#build"
+          href="#work"
           onClick={(event) => {
             event.preventDefault();
-            handleScrollToBuild();
+            handleScrollToWork();
           }}
           className="min-h-[44px] rounded-full border border-white/20 px-6 py-2 text-sm text-foreground transition-colors duration-200 hover:border-accent hover:bg-accent/10 focus-ring"
         >

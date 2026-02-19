@@ -3,7 +3,7 @@ import Hero from '@/components/Hero';
 import Section from '@/components/Section';
 import WorkTimeline from '@/components/WorkTimeline';
 import Build from '@/components/Build';
-import Leadership from '@/components/Leadership';
+import Community from '@/components/Community';
 import Lately from '@/components/Lately';
 import About from '@/components/About';
 
@@ -33,9 +33,9 @@ export default function Home() {
           heading="Community"
           minHeight="min-h-[80svh]"
         >
-          <Leadership />
+          <Community />
         </Section>
-        <Section id="lately" title="04 - Lately" heading="Lately" minHeight="min-h-[80svh]">
+        <Section id="lately" title="04 - Lately" heading="Lately" subtitle="Random sidequests and fun stuff!" minHeight="min-h-[80svh]">
           <Lately />
         </Section>
         <Section id="about" title="05 - About" heading="About" minHeight="min-h-screen">

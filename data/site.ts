@@ -3,17 +3,36 @@
 
 export const site = {
   name: 'Pauline',
-  heroSubline:
-    'Business + Computer Science student at UBC.',
-  email: 'pauline@example.com',
-  githubUrl: 'https://github.com/pauline',
-  linkedinUrl: 'https://www.linkedin.com/in/pauline',
+  heroSubline: 'Business + Computer Science student at UBC.',
+  email: 'paulineaudreyongchan@gmail.com',
+  githubUrl: 'https://github.com/pauline-ongchan',
+  linkedinUrl: 'https://www.linkedin.com/in/pauline-ongchan',
   versionLine: 'v1.0 - Updated Feb 2026',
   about: {
-    primary:
-      'TODO: Write a short paragraph about who you are, what you care about, and the kind of teams or problems you want to work with.',
-    secondary:
-      'TODO: Add a second supporting line about the kind of impact you want to make.'
+    primary: [
+    "Hi, I’m Pauline. I study Business + Computer Science, and I’m always on the lookout for ways to make life just a little easier and a lot more meaningful.",
+    "I’m drawn to building systems that serve real people — especially in education, but ultimately anywhere thoughtful innovation can make life better.",
+    "I’ve also had the joy of calling three countries home. Living in these places has made me more adaptable, and more appreciative of the little quirks that make us human.",
+  ],
+  homes: [
+    {
+      country: "🇵🇭 Philippines",
+      description: "Born and raised. Always home."
+    },
+    {
+      country: "🇸🇬 Singapore (2018 - 2022)",
+      description: "High School. Fell in love with ultimate. "
+    },
+    {
+      country: "🇨🇦 Canada (2023-2027)",
+      description: "University at UBC. Trying things."
+    },
+    {
+      country: "🇨🇳 China (soon)",
+      description: "Exchange at Tsinghua University. So excited!"
+    }
+  ],
+    secondary: 'Will travel for a good bowl of something.'
   }
 };
 

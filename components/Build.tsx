@@ -24,14 +24,21 @@ export default function Build() {
               <button
                 key={project.slug}
                 type="button"
-                className={`min-h-[44px] shrink-0 whitespace-nowrap rounded-full border px-4 py-2 text-left transition-colors duration-200 focus-ring md:w-full md:rounded-none md:border-0 md:border-l-2 md:px-0 md:py-2 md:pl-4 ${
+                className={`min-h-[44px] shrink-0 rounded-full border px-4 py-2 text-left transition-colors duration-200 focus-ring md:w-full md:rounded-none md:border-0 md:border-l-2 md:px-0 md:py-2 md:pl-4 ${
                   isActive
                     ? 'border-accent text-foreground'
                     : 'border-white/15 text-muted hover:text-foreground md:border-transparent'
                 }`}
                 onClick={() => setSelectedSlug(project.slug)}
               >
-                <span>{project.title}</span>
+                <span className="flex min-w-0 items-center justify-between gap-2">
+                  <span className="truncate">{project.title}</span>
+                  {project.isWinner ? (
+                    <span className="rounded-full border border-white/20 px-2 py-0.5 text-[10px] uppercase tracking-wide text-white/60 transition-colors duration-200 hover:border-white/30 hover:text-white/70">
+                      WINNER
+                    </span>
+                  ) : null}
+                </span>
               </button>
             );
           })}
