@@ -31,7 +31,7 @@ export default function WorkTimeline() {
               }`}
             >
               <div className="flex items-start justify-between gap-3">
-                <h3 className="min-w-0 text-sm font-semibold leading-snug text-foreground md:text-base">
+                <h3 className="min-w-0 text-sm font-semibold leading-snug text-foreground">
                   {entry.role} · {entry.company}
                 </h3>
                 <div className="shrink-0 text-[11px] leading-tight text-white/50 md:text-sm md:leading-6">
@@ -43,8 +43,8 @@ export default function WorkTimeline() {
                   {entry.location}
                 </p>
               ) : null}
-              <p className="mt-3 text-sm leading-6 text-white/85 md:text-base md:leading-7">{entry.summary}</p>
-              <ul className="mt-3 space-y-2 text-sm leading-6 text-white/85 md:text-base md:leading-7">
+              <p className="mt-3 text-sm leading-6 text-white/85 md:leading-7">{entry.summary}</p>
+              <ul className="mt-3 space-y-2 text-sm leading-6 text-white/85 md:leading-7">
                 {entry.bullets.slice(0, 2).map((bullet) => (
                   <li key={bullet}>- {bullet}</li>
                 ))}
