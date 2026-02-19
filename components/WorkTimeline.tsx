@@ -10,11 +10,13 @@ export default function WorkTimeline() {
 
   return (
     <div className="relative min-w-0">
-      <div className="absolute left-3 top-0 h-full w-px bg-white/10 md:hidden" />
       <div className="space-y-6 md:space-y-8">
         {work.map((entry) => (
-          <div key={entry.id} className="group relative min-w-0 md:grid md:grid-cols-[56px_1fr] md:gap-6">
-            <div className="relative hidden md:block">
+          <div
+            key={entry.id}
+            className="group relative grid min-w-0 grid-cols-[20px_1fr] gap-4 md:grid-cols-[56px_1fr] md:gap-6"
+          >
+            <div className="relative min-h-full">
               <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white/10" />
               <div
                 className={`absolute left-1/2 top-5 h-3 w-3 -translate-x-1/2 rounded-full border border-accent/50 bg-base transition-colors duration-200 ${
@@ -28,18 +30,21 @@ export default function WorkTimeline() {
                 prefersReducedMotion ? '' : 'hover:border-white/25 hover:shadow-soft'
               }`}
             >
-              <div className="absolute left-0 top-5 h-3 w-3 -translate-x-1/2 rounded-full border border-accent/50 bg-base md:hidden" />
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="min-w-0 text-base font-semibold text-foreground">
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="min-w-0 text-sm font-semibold leading-snug text-foreground md:text-base">
                   {entry.role} · {entry.company}
                 </h3>
-                <div className="shrink-0 text-meta">{entry.dates}</div>
+                <div className="shrink-0 text-[11px] leading-tight text-white/50 md:text-sm md:leading-6">
+                  {entry.dates}
+                </div>
               </div>
               {entry.location ? (
-                <p className="mt-2 text-subtitle">{entry.location}</p>
+                <p className="mt-1 text-xs leading-tight text-white/55 md:mt-2 md:text-sm md:leading-6">
+                  {entry.location}
+                </p>
               ) : null}
-              <p className="mt-3 text-body">{entry.summary}</p>
-              <ul className="mt-3 space-y-2 text-body">
+              <p className="mt-3 text-sm leading-6 text-white/85 md:text-base md:leading-7">{entry.summary}</p>
+              <ul className="mt-3 space-y-2 text-sm leading-6 text-white/85 md:text-base md:leading-7">
                 {entry.bullets.slice(0, 2).map((bullet) => (
                   <li key={bullet}>- {bullet}</li>
                 ))}
