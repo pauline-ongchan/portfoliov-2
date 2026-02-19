@@ -31,7 +31,7 @@ export default function WorkTimeline() {
               }`}
             >
               <div className="flex items-start justify-between gap-3">
-                <h3 className="min-w-0 text-sm font-semibold leading-snug text-foreground">
+                <h3 className="min-w-0 text-lg font-semibold leading-snug text-foreground">
                   {entry.role} · {entry.company}
                 </h3>
                 <div className="shrink-0 text-[11px] leading-tight text-white/50 md:text-sm md:leading-6">
