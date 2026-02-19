@@ -28,7 +28,7 @@ export const featured: CommunityFeaturedItem[] = [
       'Previously: Hackathon Director (2024-2025).'
     ],
     linkUrl: 'https://www.ubcbiztech.com',
-    imageSrc: '/biztech.jpeg'
+    imageSrc: '/biztech.JPEG'
   },
   {
     id: 'front-row',
