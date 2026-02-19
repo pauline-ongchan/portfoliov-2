@@ -16,15 +16,15 @@ export default function Build() {
 
   return (
     <div className="grid gap-8 md:grid-cols-[28%_1fr] md:gap-12">
-      <div className="md:sticky md:top-[80px]">
-        <div className="flex gap-2 overflow-x-auto pb-2 text-sm text-muted md:block md:space-y-2 md:overflow-visible">
+      <div className="min-w-0 md:sticky md:top-[80px]">
+        <div className="flex gap-3 overflow-x-auto whitespace-nowrap pb-2 text-sm text-muted [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:block md:space-y-2 md:overflow-visible md:whitespace-normal">
           {projects.map((project) => {
             const isActive = selectedSlug === project.slug;
             return (
               <button
                 key={project.slug}
                 type="button"
-                className={`min-h-[44px] shrink-0 rounded-full border px-4 py-2 text-left transition-colors duration-200 focus-ring md:w-full md:rounded-none md:border-0 md:border-l-2 md:px-0 md:py-2 md:pl-4 ${
+                className={`min-h-[44px] flex-none rounded-full border px-4 py-2 text-left transition-colors duration-200 focus-ring md:w-full md:rounded-none md:border-0 md:border-l-2 md:px-0 md:py-2 md:pl-4 ${
                   isActive
                     ? 'border-accent text-foreground'
                     : 'border-white/15 text-muted hover:text-foreground md:border-transparent'
@@ -44,7 +44,7 @@ export default function Build() {
           })}
         </div>
       </div>
-      <div className="rounded-card border border-white/10 bg-black/20 p-6 md:p-8">
+      <div className="min-h-0 w-full max-w-none rounded-card border border-white/10 bg-black/20 p-5 md:p-8">
         {selectedProject ? (
           <BuildProjectChapter project={selectedProject} />
         ) : (

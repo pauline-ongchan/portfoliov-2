@@ -20,7 +20,7 @@ export const site = {
       description: "Born and raised. Always home."
     },
     {
-      country: "🇸🇬 Singapore (2018 - 2022)",
+      country: "🇸🇬 Singapore (2018-2022)",
       description: "High School. Fell in love with ultimate. "
     },
     {

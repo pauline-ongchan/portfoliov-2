@@ -23,7 +23,7 @@ export default function Nav() {
 
   return (
     <nav className="fixed inset-x-0 top-0 z-50">
-      <div className="mx-auto flex h-[52px] items-center justify-between border-b border-white/10 bg-black/20 px-6 backdrop-blur md:h-[56px]">
+      <div className="mx-auto flex h-[52px] items-center justify-between gap-3 border-b border-white/10 bg-black/20 px-4 backdrop-blur sm:px-6 md:h-[56px]">
         <button
           type="button"
           className="flex items-center gap-2 text-sm font-semibold text-foreground focus-ring"
@@ -38,7 +38,7 @@ export default function Nav() {
             v1.0
           </span>
         </button>
-        <div className="flex items-center gap-4 text-sm text-muted md:gap-6">
+        <div className="ml-2 flex min-w-0 items-center gap-3 overflow-x-auto whitespace-nowrap text-sm text-muted [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:ml-0 md:gap-6 md:overflow-visible">
           {navLinks.map((link) => {
             const isActive = showHighlight && activeId === link.id;
             return (

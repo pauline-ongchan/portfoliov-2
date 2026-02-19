@@ -64,7 +64,11 @@ export default function Community() {
       <div
         className={`overflow-hidden ${
           prefersReducedMotion ? 'transition-none' : 'transition-all duration-[250ms] ease-out'
-        } ${expanded ? 'max-h-[480px] opacity-100' : 'max-h-0 opacity-0'}`}
+        } ${
+          expanded
+            ? 'max-h-[70vh] overflow-y-auto opacity-100 md:max-h-[480px] md:overflow-visible'
+            : 'max-h-0 overflow-hidden opacity-0'
+        }`}
         aria-hidden={!expanded}
       >
         <div className="rounded-card border border-white/10 bg-black/15">
