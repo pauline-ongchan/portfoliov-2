@@ -39,16 +39,16 @@ export const lately: LatelyItem[] = [
     image: '/stanley-park.jpeg'
   },
   {
-    date: 'July 2025',
-    title: 'Visited Athabasca Glacier',
-    caption: "Should have tried the glacier water.",
-    image: '/glacier.jpeg'
-  },
-  {
     date: 'August 2025',
     title: 'Did Grouse Grind',
     caption: "Only mildly regretted it halfway through.",
     image: '/grouse-grind.jpeg'
+  },
+  {
+    date: 'July 2025',
+    title: 'Visited Athabasca Glacier',
+    caption: "Should have tried the glacier water.",
+    image: '/glacier.jpeg'
   },
 
 ];
