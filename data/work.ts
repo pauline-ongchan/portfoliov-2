@@ -15,10 +15,10 @@ export const work: WorkEntry[] = [
     {
     id: 'rbc',
     company: 'RBC',
-    role: 'Incoming Software Engineering Intern',
+    role: 'Software Engineering Intern',
     dates: 'Summer 2026',
     location: 'Vancouver, BC',
-    summary: '',
+    summary: 'Developing internal data products and workflow automation tools for non-technical stakeholders.',
     bullets: [
     ],
     tags: ['SWE']

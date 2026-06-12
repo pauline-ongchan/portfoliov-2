@@ -41,6 +41,16 @@ export default function Home() {
         <Section id="about" title="05 - About" heading="About" minHeight="min-h-screen">
           <About />
         </Section>
+        <div className="pb-12 sm:pb-16">
+          <div className="mx-auto flex w-full max-w-[1100px] justify-center px-6 sm:px-8">
+            <a
+              href="#top"
+              className="px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-muted transition-colors duration-200 hover:border-accent hover:text-foreground focus-ring"
+            >
+              Back to top
+            </a>
+          </div>
+        </div>
       </main>
     </div>
   );
