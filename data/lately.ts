@@ -45,7 +45,7 @@ export const lately: LatelyItem[] = [
     image: '/glacier.jpeg'
   },
   {
-    date: 'August 2025',
+    date: 'June 2025',
     title: 'Did Grouse Grind',
     caption: "Only mildly regretted it halfway through.",
     image: '/grouse-grind.jpeg'
