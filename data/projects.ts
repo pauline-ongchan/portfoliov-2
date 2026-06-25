@@ -28,6 +28,7 @@ export const projects: Project[] = [
     subtitle: 'AIHackathon • June 2026',
     overview:
       'A pre-production UI QA tool that uses AI personas to find UI traps before they reach users.',
+    images: ['/flowproof.png'],
     tech: ['Postgres', 'React', 'Stagehand', 'TypeScript', 'Next.js'],
     links: {
       github: 'https://github.com/pauline-ongchan/persona_probe',
