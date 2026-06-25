@@ -23,6 +23,18 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: 'flowproof',
+    title: 'FlowProof',
+    subtitle: 'AIHackathon • June 2026',
+    overview:
+      'A pre-production UI QA tool that uses AI personas to find UI traps before they reach users.',
+    tech: ['Postgres', 'React', 'Stagehand', 'TypeScript', 'Next.js'],
+    links: {
+      github: 'https://github.com/pauline-ongchan/persona_probe',
+      devpost: 'https://devpost.com/software/flowproof',
+    }
+  },
+  {
     slug: 'what-was-that',
     title: 'What Was That',
     subtitle: 'nwHacks • January 2026',
