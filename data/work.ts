@@ -16,9 +16,9 @@ export const work: WorkEntry[] = [
     id: 'rbc',
     company: 'RBC',
     role: 'Software Engineering Intern',
-    dates: 'May 2026 - current',
-    location: 'Vancouver, BC',
-    summary: 'Developing internal data products and workflow automation tools for non-technical stakeholders.',
+    dates: 'May 2026 – now',
+    location: 'Vancouver',
+    summary: 'Internal data products and workflow automation tools for non-technical stakeholders.',
     bullets: [
     ],
     tags: ['SWE']
@@ -27,9 +27,9 @@ export const work: WorkEntry[] = [
     id: 'hsone',
     company: 'Henry Schein One Canada',
     role: 'Product Management Intern',
-    dates: 'May 2025 - December 2025',
-    location: 'Vancouver, BC',
-    summary: 'Worked on product discovery and early feature exploration for academic healthcare software.',
+    dates: 'May – Dec 2025',
+    location: 'Vancouver',
+    summary: 'Product discovery and early feature exploration for academic healthcare software.',
     bullets: [
       
     ],
@@ -39,9 +39,9 @@ export const work: WorkEntry[] = [
     id: 'zetl',
     company: 'Zetl',
     role: 'Product Growth and Marketing Intern',
-    dates: 'April 2024 - August 2024',
+    dates: 'Apr – Aug 2024',
     location: 'Singapore (remote)',
-    summary: 'Worked on partnership positioning, product decks, and early marketing initiatives.',
+    summary: 'Partnership positioning, product decks, early marketing.',
     bullets: [
     ],
     tags: ['Growth', 'Design']

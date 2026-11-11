@@ -25,7 +25,9 @@ export const projects: Project[] = [
   {
     slug: 'flowproof',
     title: 'FlowProof',
-    subtitle: 'AIHackathon • June 2026',
+    subtitle: 'AI · Hackathon · June 2026',
+    // Add /public/flowproof.png, then set images: ['/flowproof.png'].
+    images: [],
     overview:
       'A pre-production UI QA tool that uses AI personas to find UI traps before they reach users.',
     images: ['/flowproof.png'],

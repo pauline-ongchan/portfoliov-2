@@ -1,56 +1,87 @@
-'use client';
-
-// CONTENT: This component renders the Build section. Change copy in /data/projects.ts
-
-import { useMemo, useState } from 'react';
-import { projects } from '@/data/projects';
-import BuildProjectChapter from '@/components/BuildProjectChapter';
-
-export default function Build() {
-  const [selectedSlug, setSelectedSlug] = useState(projects[0]?.slug ?? '');
-
-  const selectedProject = useMemo(
-    () => projects.find((project) => project.slug === selectedSlug) ?? projects[0],
-    [selectedSlug]
-  );
-
+// CONTENT: /data/projects.ts
+import Image from "next/image";
+import { projects, type Project } from "@/data/projects";
+function Links({ project }: { project: Project }) {
+  const labels: Record<string, string> = {
+    github: "GitHub",
+    devpost: "Devpost",
+    demo: "Demo",
+    figma: "Figma",
+    slides: "Slides",
+  };
   return (
-    <div className="grid gap-8 md:grid-cols-[28%_1fr] md:gap-12">
-      <div className="min-w-0 md:sticky md:top-[80px]">
-        <div className="flex gap-3 overflow-x-auto whitespace-nowrap pb-2 text-sm text-muted [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:block md:space-y-2 md:overflow-visible md:whitespace-normal">
-          {projects.map((project) => {
-            const isActive = selectedSlug === project.slug;
-            return (
-              <button
-                key={project.slug}
-                type="button"
-                className={`min-h-[44px] flex-none rounded-full border px-4 py-2 text-left transition-colors duration-200 focus-ring md:w-full md:rounded-none md:border-0 md:border-l-2 md:px-0 md:py-2 md:pl-4 ${
-                  isActive
-                    ? 'border-accent text-foreground'
-                    : 'border-white/15 text-muted hover:text-foreground md:border-transparent'
-                }`}
-                onClick={() => setSelectedSlug(project.slug)}
-              >
-                <span className="flex min-w-0 items-center justify-between gap-2">
-                  <span className="truncate">{project.title}</span>
-                  {project.isWinner ? (
-                    <span className="rounded-full border border-white/20 px-2 py-0.5 text-[10px] uppercase tracking-wide text-white/60 transition-colors duration-200 hover:border-white/30 hover:text-white/70">
-                      WINNER
-                    </span>
-                  ) : null}
-                </span>
-              </button>
-            );
-          })}
+    <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+      {Object.entries(project.links).map(([label, url]) => (
+        <a
+          key={label}
+          href={url}
+          target="_blank"
+          rel="noreferrer"
+          className="text-link"
+          aria-label={`${project.title} on ${labels[label]} (opens in new tab)`}
+        >
+          {labels[label]} ↗
+        </a>
+      ))}
+    </div>
+  );
+}
+export default function Build() {
+  const [featured, ...rest] = projects;
+  return (
+    <div>
+      <article className="grid items-center gap-7 border-b border-divider py-8 md:grid-cols-2 md:gap-10">
+        <div className="relative aspect-[16/10] overflow-hidden bg-placeholder">
+          {featured.images?.[0] ? (
+            <Image
+              src={featured.images[0]}
+              alt="FlowProof interface"
+              fill
+              sizes="(max-width: 768px) 100vw, 500px"
+              className="object-contain"
+            />
+          ) : (
+            <div className="flex h-full flex-col items-center justify-center gap-3">
+              <span className="font-serif text-5xl">FlowProof</span>
+              <span className="text-xs text-muted">
+                Project preview coming soon
+              </span>
+            </div>
+          )}
         </div>
-      </div>
-      <div className="min-h-0 w-full max-w-none rounded-card border border-white/10 bg-black/20 p-5 md:p-8">
-        {selectedProject ? (
-          <BuildProjectChapter project={selectedProject} />
-        ) : (
-          <div className="text-subtitle">No project selected.</div>
-        )}
-      </div>
+        <div>
+          <p className="section-label">{featured.subtitle}</p>
+          <h2 className="mt-3 font-serif text-4xl">{featured.title}</h2>
+          <p className="mt-3 text-sm leading-7 text-muted">
+            {featured.overview}
+          </p>
+          <p className="mb-5 mt-4 text-xs leading-6 text-muted">
+            {featured.tech.join(" · ")}
+          </p>
+          <Links project={featured} />
+        </div>
+      </article>
+      {rest.map((project) => (
+        <article
+          key={project.slug}
+          className="grid gap-4 border-b border-divider py-6 sm:grid-cols-[1fr_auto] sm:gap-8"
+        >
+          <div>
+            <h2 className="font-medium">
+              {project.title}
+              {project.isWinner && (
+                <span className="ml-3 text-[10px] tracking-widest text-accent">
+                  WINNER
+                </span>
+              )}
+            </h2>
+            <p className="mt-2 max-w-[650px] text-sm leading-6 text-muted">
+              {project.overview}
+            </p>
+          </div>
+          <Links project={project} />
+        </article>
+      ))}
     </div>
   );
 }

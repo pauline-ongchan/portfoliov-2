@@ -1,35 +1,25 @@
-// CONTENT: This component renders the About section. Change copy in /data/site.ts
-
-import { site } from '@/data/site';
-
+// CONTENT: /data/site.ts
+import { site } from "@/data/site";
 export default function About() {
   return (
-    <div className="max-w-prose space-y-4 text-body">
-      {site.about.primary.map((paragraph, i) => (
-        <p key={i} className="leading-relaxed text-white/80 mb-4">
-          {paragraph}
-        </p>
-      ))}
-      {/* Homes Section */}
-      <div className="space-y-3">
-        <h3 className="text-white font-medium">Places I’ve Called Home</h3>
-
-        <ul className="space-y-2 text-white/70">
-          {site.about.homes.map((home, i) => (
-            <li key={i} className="flex gap-3">
-              <span className="text-blue-400">•</span>
-              <span>
-                <span className="text-white font-medium">
-                  {home.country}
-                </span>
-                {" — "}
-                {home.description}
-              </span>
-            </li>
-          ))}
-        </ul>
+    <div className="max-w-[740px] py-7 text-sm leading-7">
+      <div className="space-y-4 text-muted">
+        {site.about.primary.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
       </div>
-      <p className="text-subtitle italic">{site.about.secondary}</p>
+      <h2 className="mb-4 mt-10 font-serif text-3xl">
+        Places I’ve called home
+      </h2>
+      <ul>
+        {site.about.homes.map((home) => (
+          <li key={home.country} className="border-b border-divider py-3">
+            <span className="font-medium">{home.country}</span>
+            <span className="text-muted"> — {home.description}</span>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-8 text-muted">{site.about.secondary}</p>
     </div>
   );
 }
