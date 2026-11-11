@@ -1,107 +1,68 @@
-'use client';
-
-// CONTENT: This component renders the Community section. Change copy in /data/community.ts
-
-import { useState } from 'react';
-import { featured, more } from '@/data/community';
-import { usePrefersReducedMotion } from '@/components/hooks/usePrefersReducedMotion';
-
+// CONTENT: /data/community.ts
+import Image from "next/image";
+import { featured, more } from "@/data/community";
 export default function Community() {
-  const [expanded, setExpanded] = useState(false);
-  const prefersReducedMotion = usePrefersReducedMotion();
-
   return (
-    <div className="space-y-6">
-      <div className="grid gap-6 md:grid-cols-2">
-        {featured.slice(0, 2).map((item) => (
-          <article
-            key={item.id}
-            className={`overflow-hidden rounded-card border border-white/10 bg-black/20 ${
-              prefersReducedMotion ? '' : 'transition-colors duration-200 hover:border-white/25'
-            }`}
-          >
-            {item.imageSrc ? (
-              <div className="h-36 w-full overflow-hidden border-b border-white/10 bg-black/30">
-                <img src={item.imageSrc} alt={item.org} className="h-full w-full object-cover" />
-              </div>
-            ) : null}
-            <div className="p-6">
-              <div className="flex items-start justify-between gap-3">
-                <div className="text-kicker">{item.dateRange}</div>
-                {item.linkUrl ? (
-                  <a
-                    href={item.linkUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-xs text-white/60 underline-offset-4 transition-colors duration-200 hover:text-foreground hover:underline focus-ring"
-                  >
-                    see more ↗
-                  </a>
-                ) : null}
-              </div>
-              <h3 className="mt-2 text-lg font-semibold text-foreground">{item.org}</h3>
-              <p className="text-subtitle">{item.role}</p>
-              <ul className="mt-4 list-none space-y-2 text-body">
-                {item.bullets.slice(0, 2).map((bullet) => (
-                  <li key={bullet}>- {bullet}</li>
-                ))}
-              </ul>
-            </div>
-          </article>
-        ))}
-      </div>
-
-      <div className="flex justify-center">
-        <button
-          type="button"
-          onClick={() => setExpanded((prev) => !prev)}
-          className="text-sm text-white/70 transition-colors duration-200 hover:text-foreground focus-ring"
+    <div>
+      {featured.map((item) => (
+        <article
+          key={item.id}
+          className="flex flex-col gap-6 border-b border-divider py-7 sm:flex-row"
         >
-          {expanded ? '– Show less' : '+ View more'}
-        </button>
-      </div>
-
-      <div
-        className={`overflow-hidden ${
-          prefersReducedMotion ? 'transition-none' : 'transition-all duration-[250ms] ease-out'
-        } ${
-          expanded
-            ? 'max-h-[70vh] overflow-y-auto opacity-100 md:max-h-[480px] md:overflow-visible'
-            : 'max-h-0 overflow-hidden opacity-0'
-        }`}
-        aria-hidden={!expanded}
-      >
-        <div className="rounded-card border border-white/10 bg-black/15">
-          {more.map((item, index) => {
-            const rowContent = (
-              <div className="flex items-center justify-between gap-4 px-5 py-4">
-                <div className="text-subtitle">{item.label}</div>
-                <div className="shrink-0 text-meta">{item.dateRange}</div>
-              </div>
-            );
-
-            return (
-              <div
-                key={item.id}
-                className={index === 0 ? '' : 'border-t border-white/10'}
-              >
+          {item.imageSrc && (
+            <Image
+              src={item.imageSrc}
+              alt={`${item.org} community`}
+              width={144}
+              height={112}
+              sizes="144px"
+              className="h-28 w-36 shrink-0 object-cover"
+            />
+          )}
+          <div className="flex-1">
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <h2 className="font-medium">
+                <a href={item.linkUrl} className="hover:text-accent">
+                  {item.org} ↗
+                </a>
+              </h2>
+              <p className="text-xs text-muted">{item.dateRange}</p>
+            </div>
+            <p className="mt-1 text-sm">{item.role}</p>
+            {item.bullets.map((bullet) => (
+              <p key={bullet} className="mt-2 text-sm leading-6 text-muted">
+                {bullet}
+              </p>
+            ))}
+          </div>
+        </article>
+      ))}
+      <details className="mt-6">
+        <summary className="w-fit cursor-pointer text-sm text-accent underline underline-offset-4">
+          View more
+        </summary>
+        <ul className="mt-4">
+          {more.map((item) => (
+            <li
+              key={item.id}
+              className="flex flex-col justify-between gap-2 border-b border-divider py-4 sm:flex-row sm:gap-8"
+            >
+              <span className="text-sm">
                 {item.linkUrl ? (
-                  <a
-                    href={item.linkUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="block transition-colors duration-200 hover:bg-white/[0.03] hover:underline focus-ring"
-                  >
-                    {rowContent}
+                  <a href={item.linkUrl} className="hover:text-accent">
+                    {item.label} ↗
                   </a>
                 ) : (
-                  rowContent
+                  item.label
                 )}
-              </div>
-            );
-          })}
-        </div>
-      </div>
+              </span>
+              <span className="shrink-0 text-xs leading-5 text-muted">
+                {item.dateRange}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </details>
     </div>
   );
 }

@@ -3,7 +3,10 @@
 
 export const site = {
   name: 'Pauline',
-  heroSubline: 'Business + Computer Science student at UBC.',
+  heroSubline: 'Business + Computer Science at UBC, currently a software engineering intern at ',
+  introCompany: 'RBC',
+  introInterest: "I'm interested in",
+  introLink: 'solving real problems',
   email: 'paulineaudreyongchan@gmail.com',
   githubUrl: 'https://github.com/pauline-ongchan',
   linkedinUrl: 'https://www.linkedin.com/in/pauline-ongchan',
@@ -40,7 +43,7 @@ export const navLinks = [
   { id: 'work', label: 'Work' },
   { id: 'build', label: 'Build' },
   { id: 'community', label: 'Community' },
-  { id: 'lately', label: 'Lately' },
+  { id: 'life', label: 'Life' },
   { id: 'about', label: 'About' }
 ];
 

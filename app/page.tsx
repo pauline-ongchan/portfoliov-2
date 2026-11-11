@@ -1,57 +1,45 @@
-import Nav from '@/components/Nav';
-import Hero from '@/components/Hero';
-import Section from '@/components/Section';
-import WorkTimeline from '@/components/WorkTimeline';
-import Build from '@/components/Build';
-import Community from '@/components/Community';
-import Lately from '@/components/Lately';
-import About from '@/components/About';
-
+// CONTENT: Introduction and navigation in /data/site.ts; each panel references its own data.
+import { hero, site } from "@/data/site";
+import PortfolioTabs from "@/components/PortfolioTabs";
+import WorkTimeline from "@/components/WorkTimeline";
+import Build from "@/components/Build";
+import Community from "@/components/Community";
+import Lately from "@/components/Lately";
+import Writing from "@/components/Writing";
+import Bookshelf from "@/components/Bookshelf";
+import About from "@/components/About";
+import Footer from "@/components/Footer";
 export default function Home() {
   return (
-    <div className="relative">
-      <Nav />
-      <main className="pt-[56px] overflow-x-hidden sm:snap-y sm:snap-mandatory sm:scroll-smooth">
-        <Section id="top" minHeight="min-h-[90svh]" className="pt-24">
-          <Hero />
-        </Section>
-        <Section
-          id="work"
-          title="01 - WORK"
-          heading="Work"
-          subtitle="Recent roles and projects that shaped how I build."
-          minHeight="min-h-[80svh]"
-        >
-          <WorkTimeline />
-        </Section>
-        <Section id="build" title="02 - Build" heading="Build" minHeight="min-h-[80svh]">
-          <Build />
-        </Section>
-        <Section
-          id="community"
-          title="03 - Community"
-          heading="Community"
-          minHeight="min-h-[80svh]"
-        >
-          <Community />
-        </Section>
-        <Section id="lately" title="04 - Lately" heading="Lately" subtitle="Random sidequests and fun stuff!" minHeight="min-h-[80svh]">
+    <main className="mx-auto max-w-[1104px] px-5 pt-12 sm:px-8 sm:pt-20">
+      <header className="mb-8">
+        <h1 className="font-serif text-[56px] leading-[1.05] tracking-[-0.025em] sm:text-[72px]">
+          {hero.title}
+        </h1>
+        <p className="mt-6 max-w-[900px] text-lg leading-[1.65] text-muted sm:text-[22px]">
+          {site.heroSubline}
+          <a href="#work" className="text-link">
+            {site.introCompany}
+          </a>
+          . {site.introInterest}{" "}
+          <a href="#build" className="text-link">
+            {site.introLink}
+          </a>
+          .
+        </p>
+      </header>
+      <PortfolioTabs>
+        <WorkTimeline />
+        <Build />
+        <Community />
+        <div className="space-y-14 py-7 sm:space-y-16">
           <Lately />
-        </Section>
-        <Section id="about" title="05 - About" heading="About" minHeight="min-h-screen">
-          <About />
-        </Section>
-        <div className="pb-12 sm:pb-16">
-          <div className="mx-auto flex w-full max-w-[1100px] justify-center px-6 sm:px-8">
-            <a
-              href="#top"
-              className="px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-muted transition-colors duration-200 hover:border-accent hover:text-foreground focus-ring"
-            >
-              Back to top
-            </a>
-          </div>
+          <Writing />
+          <Bookshelf />
         </div>
-      </main>
-    </div>
+        <About />
+      </PortfolioTabs>
+      <Footer />
+    </main>
   );
 }
